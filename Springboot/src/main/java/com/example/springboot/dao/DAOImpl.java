@@ -3,6 +3,7 @@ package com.example.springboot.dao;
 
 import com.example.springboot.model.Users;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 
@@ -11,8 +12,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import java.util.List;
 
-@Component
-@Transactional(readOnly = true)
+@Repository
 public class DAOImpl implements DAO {
 
     @PersistenceContext

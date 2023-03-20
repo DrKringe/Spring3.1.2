@@ -19,26 +19,31 @@ public class UsersServiceImpl implements UsersService{
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Users> getAllUsers() {
         return userDAO.getAllUsers();
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Users getUserId(long id) {
         return userDAO.getUserId(id);
     }
 
     @Override
+    @Transactional
     public void addUser(Users user) {
         userDAO.addUser(user);
     }
 
     @Override
+    @Transactional
     public void updateUser(Users user) {
         userDAO.updateUser(user);
     }
 
     @Override
+    @Transactional
     public Users removeUser(long id) {
         return userDAO.removeUser(id); }
 }
